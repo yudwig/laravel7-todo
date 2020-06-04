@@ -8,6 +8,7 @@
             <label>
                 <input type="text" name="title">
             </label>
+            <input type="hidden" name="completed" value="0">
         </form>
     </div>
     <div class="links">

@@ -6,7 +6,7 @@
         <form name="updateForm" method="post" action="{{ route('categories.update', ['id' => 1]) }}">
             @csrf
             <label>
-                <input type="text" value="カテゴリ1">
+                <input type="text" name="title" value="カテゴリ1">
             </label>
         </form>
         <form name="deleteForm" method="post" action="{{ route('categories.delete', ['id' => 1]) }}">

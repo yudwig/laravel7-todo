@@ -8,6 +8,7 @@
             <label>
                 <input type="text" name="title" value="タスク1">
             </label>
+            <input type="hidden" name="completed" value="0">
         </form>
         <form name="deleteForm" method="post" action="{{ route('tasks.delete', ['id' => 1]) }}">
             @csrf
