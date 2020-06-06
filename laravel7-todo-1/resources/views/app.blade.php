@@ -64,8 +64,11 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
+        <div class="flex-center" style="min-height: 100vh;">
+            <div class="content" style="margin: 100px 0;">
+                @if ($errors->has('title'))
+                    <h4 style="color: #ff5e5e">{{$errors->first()}}</h4>
+                @endif
                 @yield('content')
             </div>
         </div>

@@ -13,6 +13,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function() { return view('tasks.index'); })->name('tasks.showIndex');
+//Route::get('/categories/create', function() { return view('categories.create'); })->name('categories.showCreate');
+//Route::get('/categories/{id}/edit', function() { return view('categories.edit'); })->name('categories.showEdit');
+//
+//Route::post('/categories/create', function() { echo "カテゴリー作成"; })->name('categories.create');
+//Route::post('/categories/{id}/update', function($id) { echo "カテゴリー更新 (id: {$id})"; })->name('categories.update');
+//Route::post('/categories/{id}/delete', function($id) { echo "カテゴリー削除 (id: {$id})"; })->name('categories.delete');
+//
+//Route::get('/categories/{id}/tasks/create', function() { return view('tasks.create'); })->name('tasks.showCreate');
+//Route::get('/tasks/{id}/edit', function() { return view('tasks.edit'); })->name('tasks.showEdit');
+//
+//Route::post('/categories/{id}/tasks/create', function() { echo "タスク作成"; })->name('tasks.create');
+//Route::post('/tasks/{id}/update', function($id) { echo "タスク更新 (id: {$id})"; })->name('tasks.update');
+//Route::post('/tasks/{id}/delete', function($id) { echo "タスク削除 (id: {$id})"; })->name('tasks.delete');
+
+
+
+Route::get('/', 'TaskController@showIndexView')->name('tasks.showIndex');
+Route::get('/categories/create', 'CategoryController@showCreateView')->name('categories.showCreate');
+Route::get('/categories/{id}/edit', 'CategoryController@showEditView')->name('categories.showEdit');
+Route::post('/categories/create', 'CategoryController@create')->name('categories.create');
+Route::post('/categories/{id}/update', 'CategoryController@update')->name('categories.update');
+Route::post('/categories/{id}/delete', 'CategoryController@delete')->name('categories.delete');
+Route::get('/categories/{id}/tasks/create', 'TaskController@showCreateView')->name('tasks.showCreate');
+Route::get('/tasks/{id}/edit', 'TaskController@showEditView')->name('tasks.showEdit');
+Route::post('/categories/{id}/tasks/create', 'TaskController@create')->name('tasks.create');
+Route::post('/tasks/{id}/update', 'TaskController@update')->name('tasks.update');
+Route::post('/tasks/{id}/delete', 'TaskController@delete')->name('tasks.delete');
+
+
+
