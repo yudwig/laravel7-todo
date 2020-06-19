@@ -1,5 +1,0 @@
-{
-	"scripts": {
-		"db": "mysql -u root todo2"
-	}
-}
